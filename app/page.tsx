@@ -1,13 +1,18 @@
+'use client';
 import { Button } from '@/components/Button/Button';
 import { Htag } from '@/components/Htag/Htag';
 import { P } from '@/components/P/P';
+import { Rating } from '@/components/Rating/Rating';
 import { Tag } from '@/components/Tag/Tag';
+import { useState } from 'react';
 
 export default function Home() {
+  const [rating, setRating] = useState<number>(4);
+
   return (
     <div className="">
-      <Htag tag="h1">tag</Htag>
-      <Button apperance="primary" arrow="right">button</Button>
+      <Htag tag="h1">hgfhfg</Htag>
+      <Button apperance="primary" arrow="right" >button</Button>
       <Button apperance="ghost" arrow="right">button</Button>
       <P size="small">shajfhdsjkfhka</P>
       <P>shajfhdsgfdgdfgdshsfhfhka</P>
@@ -18,7 +23,7 @@ export default function Home() {
       <Tag size='medium' color='red'>Red</Tag>
       <Tag size='medium' color='green'>Green</Tag>
       <Tag size='small' color='primary'>Green</Tag>
-
+      <Rating rating={rating} isEditable setRating={setRating}/>
 
     </div>
   );
