@@ -17,14 +17,12 @@ export default function Home() {
       <P size="small">shajfhdsjkfhka</P>
       <P>shajfhdsgfdgdfgdshsfhfhka</P>
       <P size="big">shajfhdsjkfhgsfhsdfgfdshka</P>
-
       <Tag size="small">fds</Tag>
       <Tag size='small'>Ghost</Tag>
       <Tag size='medium' color='red'>Red</Tag>
       <Tag size='medium' color='green'>Green</Tag>
       <Tag size='small' color='primary'>Green</Tag>
       <Rating rating={rating} isEditable setRating={setRating}/>
-
     </div>
   );
 }
