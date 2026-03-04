@@ -1,13 +1,16 @@
-'use client';
+// 'use client';
 import { Button } from '@/components/Button/Button';
 import { Htag } from '@/components/Htag/Htag';
 import { P } from '@/components/P/P';
 import { Rating } from '@/components/Rating/Rating';
 import { Tag } from '@/components/Tag/Tag';
-import { useState } from 'react';
+// import { useState } from 'react';
+import Menu from '@/components/Menu/Menu';
+
+
 
 export default function Home() {
-  const [rating, setRating] = useState<number>(4);
+  // const [rating, setRating] = useState<number>(4);
 
   return (
     <div className="">
@@ -22,7 +25,7 @@ export default function Home() {
       <Tag size='medium' color='red'>Red</Tag>
       <Tag size='medium' color='green'>Green</Tag>
       <Tag size='small' color='primary'>Green</Tag>
-      <Rating rating={rating} isEditable setRating={setRating}/>
+      {/* <Rating rating={rating} isEditable setRating={setRating}/> */}
     </div>
   );
 }
