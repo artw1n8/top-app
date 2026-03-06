@@ -5,7 +5,7 @@ import MenuElement from '../MenuItem/MenuElement';
 
 export default async function Menu() {
 	const firstCategory = TopLevelCategory.Courses;
-	const menu = await getMenu(0);
+	const menu = await getMenu(firstCategory);
 
 	return (
 		<MenuElement MENU={menu} firstCategory={firstCategory} />

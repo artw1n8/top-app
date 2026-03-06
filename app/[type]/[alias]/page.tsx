@@ -1,5 +1,7 @@
 import { getMenu } from '@/api/menu';
 import { getPage } from '@/api/page';
+import { getProducts } from '@/api/products';
+import { TopPageComponent } from '@/components/TopPageComponent/TopPageComponent';
 import { firstLevelMenu } from '@/helpers/helpers';
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
@@ -23,7 +25,7 @@ export async function generateStaticParams() {
   return paths;
 }
 
-export default async function PageProduct({params}: PageProps<'/[type]/[alias]'>) {
+export default async function TopPage({params}: PageProps<'/[type]/[alias]'>) {
 	const Params = await params.then(p => p);
 	const page = await getPage(Params.alias);
 	if(!page) {
@@ -33,10 +35,13 @@ export default async function PageProduct({params}: PageProps<'/[type]/[alias]'>
 	if(!firstCategoryItem) {
 		notFound();
 	}
+	const products = await getProducts(page.category);
 
 	return (
-		<div >
-			Страница с alias {page.title}
-		</div>
+		<TopPageComponent 
+		firstCategory={firstCategoryItem.id} 
+		page={page} 
+		products={products} 
+		/>
 	);
 }
