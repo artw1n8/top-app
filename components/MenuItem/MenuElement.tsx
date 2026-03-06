@@ -3,21 +3,11 @@ import styles from './MenuElement.module.css';
 import cn from 'classnames';
 import { FirstLevelMenuItem, MenuItem, PageItem } from '@/interfaces/menu.interface';
 import { TopLevelCategory } from '@/interfaces/page.interface';
-import CoursesIcon from './icons/courses.svg';
-import ServicesIcon from './icons/services.svg';
-import BooksIcon from './icons/books.svg';
-import ProductsIcon from './icons/products.svg';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useState } from 'react';
+import { firstLevelMenu } from '@/helpers/helpers';
 
-
-const firstLevelMenu: FirstLevelMenuItem[] = [
-	{route: 'courses', name: 'Курсы', icon: <CoursesIcon />, id: TopLevelCategory.Courses},
-	{route: 'services', name: 'Сервисы', icon: <ServicesIcon />, id: TopLevelCategory.Services},
-	{route: 'books', name: 'Книги', icon: <BooksIcon />, id: TopLevelCategory.Books},
-	{route: 'products', name: 'Товары', icon: <ProductsIcon />, id: TopLevelCategory.Products},
-];
 
 export default function MenuElement({MENU, firstCategory}: {MENU: MenuItem[], firstCategory: TopLevelCategory}) {
 	const [menu, setMenu]= useState<MenuItem[]>(MENU);
