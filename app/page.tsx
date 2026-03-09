@@ -6,6 +6,8 @@ import { Rating } from '@/components/Rating/Rating';
 import { Tag } from '@/components/Tag/Tag';
 // import { useState } from 'react';
 import Menu from '@/components/Menu/Menu';
+import { Input } from '@/components/Input/Input';
+import { Textarea } from '@/components/Textarea/Textarea';
 
 
 
@@ -25,6 +27,8 @@ export default function Home() {
       <Tag size='medium' color='red'>Red</Tag>
       <Tag size='medium' color='green'>Green</Tag>
       <Tag size='small' color='primary'>Green</Tag>
+      <Input placeholder='input'/>
+      <Textarea placeholder='textarea'/>
       {/* <Rating rating={rating} isEditable setRating={setRating}/> */}
     </div>
   );
