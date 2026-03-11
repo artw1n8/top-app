@@ -8,7 +8,17 @@ const nextConfig: NextConfig = {
         as: '*.js',
       },
     },
-  }
+  },
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'old-images.hb.ru-msk.vkcs.cloud',
+        port: '',
+        pathname: '/**', // Разрешает любые пути на этом домене
+      },
+    ],
+  },
 };
 
 export default nextConfig;
