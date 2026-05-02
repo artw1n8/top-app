@@ -1,6 +1,10 @@
 import type { Metadata } from 'next';
 import './globals.css';
 import { Noto_Sans } from 'next/font/google';
+import { Header } from '@/components/Header/Header';
+import { Footer } from '@/components/Footer/Footer';
+import { SideBar } from '@/components/SideBar/SideBar';
+import cn from 'classnames';
 
 export const metadata: Metadata = {
   title: 'Top app',
@@ -17,8 +21,13 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode;}>) {
   return (
     <html lang="en">
-      <body className={noto.className}>
-        {children}
+      <body className={cn(noto.className, 'wrapper')}>
+        <Header className='header'/>
+          <SideBar className='sidebar'/>
+          <div className='body'>
+            {children}
+          </div>
+        <Footer className='footer'/>
       </body>
     </html>
   );

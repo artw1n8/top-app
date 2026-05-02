@@ -1,0 +1,7 @@
+.wrapper {
+	padding-top: 7px;
+	padding-left: 2px;
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: 30px;
+}

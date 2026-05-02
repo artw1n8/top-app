@@ -12,15 +12,19 @@ const eslintConfig = defineConfig([
     'out/**',
     'build/**',
     'next-env.d.ts',
-    
   ]),
   {
     rules: {
-      'semi': ['error'],
+      semi: ['error'],
       quotes: ['error', 'single'],
-    }
-  }
-  
+      '@typescript-eslint/no-empty-interface': [
+        'error',
+        {
+          'allowSingleExtends': true,
+        },
+      ],
+    },
+  },
 ]);
 
 export default eslintConfig;
