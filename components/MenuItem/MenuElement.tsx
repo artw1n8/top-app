@@ -65,7 +65,7 @@ export default function MenuElement({MENU, firstCategory}: {MENU: MenuItem[], fi
 	const buildThirdLevel = (pages: PageItem[], route: string) => {
 		return (
 			pages.map(p => (
-				<Link href={`/${route}/${p.alias}`} key={p.title} className={cn(styles.thirdLevel, {
+				<Link href={`/${route}/${p.alias}`} key={p._id} className={cn(styles.thirdLevel, {
 					[styles.thirdLevelActive]: `/${route}/${p.alias}` === path
 				})}>
 					{p.category}
