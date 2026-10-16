@@ -5,7 +5,7 @@ import cn from 'classnames';
 import StarIcon from './star.svg';
 import { JSX, useEffect, useState, KeyboardEvent } from 'react';
 
-export const Rating = ({isEditable = false, rating,  setRating, children,ref, ...props} : RatingProps) => {
+export const Rating = ({isEditable = false, rating,  setRating, children,ref,error, ...props} : RatingProps) => {
 	const [ratingArray, setRatingArray] = useState<JSX.Element[]>(new Array(5).fill(<></>));
 
 	const constructRating = (currentRating: number) => {
@@ -60,8 +60,9 @@ export const Rating = ({isEditable = false, rating,  setRating, children,ref, ..
 	}, [rating]);
 
 	return (
-		<div {...props} ref={ref}>
+		<div className={styles.ratingWrapper} {...props} ref={ref}>
 			{ratingArray.map((r, i) => (<span key={i}>{r}</span>))}
+			{error && <span className={styles.errorMessage}>{error.message}</span>}
 		</div>
 	);
 };
